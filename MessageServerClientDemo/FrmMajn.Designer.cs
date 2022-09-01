@@ -186,7 +186,7 @@ namespace MessageServerClientDemo
             // txtUserName
             // 
             this.txtUserName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MessageServerClientDemo.Properties.Settings.Default, "UserName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtUserName.Location = new System.Drawing.Point(92, 15);
+            this.txtUserName.Location = new System.Drawing.Point(92, 13);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(101, 20);
             this.txtUserName.TabIndex = 23;
