@@ -2,6 +2,7 @@
 using MessageServerClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -13,19 +14,35 @@ namespace MessageServerClientDemo
 {
     public partial class FrmMain : Form
     {
-        //string baseUrl = "https://messaging.nascosoft.ly/api";
-        //string baseUrl = "https://localhost:7252/api";
-        //string instanceId = "instance9621";
-        //string token = "rgqmekfmvkwgrwkh";
-        //string referenceId = "123";
         string jwt = "";
         DateTime jwtexpirty;
+        DateTime subscriptionExpiry; 
         public FrmMain()
         {
             InitializeComponent();
         }
 
-        async private void btnSEndText_Click(object sender, EventArgs e)
+        async private void btnAuthenticate_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
+            var client = new WhatsAppClient(null); //jwt is not required now
+            var ar = await client.Authenticate(txtUserName.Text, txtPassword.Text);
+
+            if (ar != null)
+            {
+                jwt = ar.Jwt;
+                subscriptionExpiry = ar.SubscriptionExpiryDate;
+                jwtexpirty = ar.JwtExpiry;
+                var expirtystr = $"Token valid Until {ar.JwtExpiry}\n\rSubscription valid until {ar.SubscriptionExpiryDate}";
+                lblExpiry.Text = expirtystr;
+            }
+            else
+            {
+                MessageBox.Show(this, "authentication Failed");
+            }
+        }
+
+        async private void btnSendText_Click(object sender, EventArgs e)
         {
             if (txtPhoneNo.Text.Length < 12)
             {
@@ -152,24 +169,7 @@ namespace MessageServerClientDemo
             }
         }
 
-        async private void btnAuthenticate_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.Save();
-            var client = new WhatsAppClient(null); //jwt is not required now
-            var ar = await client.Authenticate(txtUserName.Text, txtPassword.Text);
-
-            if (ar != null)
-            {
-                jwt = ar.Jwt;
-                jwtexpirty = ar.JwtExpiry;
-                var expirtystr = $"Token valid Until {ar.JwtExpiry}\n\rSubscription valid until {ar.SubscriptionExpiryDate}";
-                lblExpiry.Text = expirtystr;
-            }
-            else
-            {
-                MessageBox.Show(this, "authentication Failed");
-            }
-        }
+        
 
         private void btnImageFileDialog_Click(object sender, EventArgs e)
         {

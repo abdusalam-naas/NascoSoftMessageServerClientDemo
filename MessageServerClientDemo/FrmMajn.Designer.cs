@@ -98,7 +98,7 @@ namespace MessageServerClientDemo
             this.messagesDataGridView.Location = new System.Drawing.Point(35, 286);
             this.messagesDataGridView.Name = "messagesDataGridView";
             this.messagesDataGridView.RowHeadersWidth = 51;
-            this.messagesDataGridView.Size = new System.Drawing.Size(618, 200);
+            this.messagesDataGridView.Size = new System.Drawing.Size(782, 200);
             this.messagesDataGridView.TabIndex = 14;
             this.messagesDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.messagesDataGridView_RowHeaderMouseDoubleClick);
             // 
@@ -165,11 +165,11 @@ namespace MessageServerClientDemo
             // 
             // btnCheckUser
             // 
-            this.btnCheckUser.Location = new System.Drawing.Point(152, 214);
+            this.btnCheckUser.Location = new System.Drawing.Point(140, 216);
             this.btnCheckUser.Name = "btnCheckUser";
-            this.btnCheckUser.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckUser.Size = new System.Drawing.Size(166, 23);
             this.btnCheckUser.TabIndex = 15;
-            this.btnCheckUser.Text = "Check";
+            this.btnCheckUser.Text = "Check number in whatsapp";
             this.btnCheckUser.UseVisualStyleBackColor = true;
             this.btnCheckUser.Click += new System.EventHandler(this.btnCheckUser_Click);
             // 
@@ -204,7 +204,7 @@ namespace MessageServerClientDemo
             // 
             // txtCheckMobile
             // 
-            this.txtCheckMobile.Location = new System.Drawing.Point(46, 214);
+            this.txtCheckMobile.Location = new System.Drawing.Point(34, 216);
             this.txtCheckMobile.Name = "txtCheckMobile";
             this.txtCheckMobile.Size = new System.Drawing.Size(100, 20);
             this.txtCheckMobile.TabIndex = 25;
@@ -235,7 +235,7 @@ namespace MessageServerClientDemo
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(286, 242);
+            this.label6.Location = new System.Drawing.Point(377, 248);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 71;
@@ -243,7 +243,7 @@ namespace MessageServerClientDemo
             // 
             // txtFileName
             // 
-            this.txtFileName.Location = new System.Drawing.Point(349, 235);
+            this.txtFileName.Location = new System.Drawing.Point(440, 241);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.Size = new System.Drawing.Size(209, 20);
             this.txtFileName.TabIndex = 70;
@@ -251,7 +251,7 @@ namespace MessageServerClientDemo
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(262, 169);
+            this.label5.Location = new System.Drawing.Point(353, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 69;
@@ -259,7 +259,7 @@ namespace MessageServerClientDemo
             // 
             // txtImageCaption
             // 
-            this.txtImageCaption.Location = new System.Drawing.Point(349, 166);
+            this.txtImageCaption.Location = new System.Drawing.Point(440, 172);
             this.txtImageCaption.Name = "txtImageCaption";
             this.txtImageCaption.Size = new System.Drawing.Size(149, 20);
             this.txtImageCaption.TabIndex = 68;
@@ -267,7 +267,7 @@ namespace MessageServerClientDemo
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(290, 55);
+            this.label4.Location = new System.Drawing.Point(381, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 67;
@@ -275,39 +275,43 @@ namespace MessageServerClientDemo
             // 
             // btnDocFileDialog
             // 
-            this.btnDocFileDialog.Location = new System.Drawing.Point(247, 211);
+            this.btnDocFileDialog.Location = new System.Drawing.Point(338, 217);
             this.btnDocFileDialog.Name = "btnDocFileDialog";
             this.btnDocFileDialog.Size = new System.Drawing.Size(96, 23);
             this.btnDocFileDialog.TabIndex = 66;
             this.btnDocFileDialog.Text = "Select Document";
             this.btnDocFileDialog.UseVisualStyleBackColor = true;
+            this.btnDocFileDialog.Click += new System.EventHandler(this.btnDocFileDialog_Click);
             // 
             // btnImageFileDialog
             // 
-            this.btnImageFileDialog.Location = new System.Drawing.Point(247, 141);
+            this.btnImageFileDialog.Location = new System.Drawing.Point(338, 147);
             this.btnImageFileDialog.Name = "btnImageFileDialog";
             this.btnImageFileDialog.Size = new System.Drawing.Size(96, 23);
             this.btnImageFileDialog.TabIndex = 65;
             this.btnImageFileDialog.Text = "Select Image";
             this.btnImageFileDialog.UseVisualStyleBackColor = true;
+            this.btnImageFileDialog.Click += new System.EventHandler(this.btnImageFileDialog_Click);
             // 
             // txtDocFilePath
             // 
-            this.txtDocFilePath.Location = new System.Drawing.Point(349, 212);
+            this.txtDocFilePath.Location = new System.Drawing.Point(440, 218);
             this.txtDocFilePath.Name = "txtDocFilePath";
             this.txtDocFilePath.Size = new System.Drawing.Size(209, 20);
             this.txtDocFilePath.TabIndex = 64;
+            this.txtDocFilePath.TextChanged += new System.EventHandler(this.txtDocFilePath_TextChanged);
             // 
             // txtImageFilePath
             // 
-            this.txtImageFilePath.Location = new System.Drawing.Point(349, 140);
+            this.txtImageFilePath.Location = new System.Drawing.Point(440, 146);
             this.txtImageFilePath.Name = "txtImageFilePath";
             this.txtImageFilePath.Size = new System.Drawing.Size(209, 20);
             this.txtImageFilePath.TabIndex = 63;
+            this.txtImageFilePath.TextChanged += new System.EventHandler(this.txtImageFilePath_TextChanged);
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(349, 49);
+            this.txtMessage.Location = new System.Drawing.Point(440, 55);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(209, 76);
@@ -316,7 +320,7 @@ namespace MessageServerClientDemo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(290, 15);
+            this.label3.Location = new System.Drawing.Point(381, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 61;
@@ -324,45 +328,48 @@ namespace MessageServerClientDemo
             // 
             // txtPhoneNo
             // 
-            this.txtPhoneNo.Location = new System.Drawing.Point(349, 12);
+            this.txtPhoneNo.Location = new System.Drawing.Point(440, 18);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(149, 20);
             this.txtPhoneNo.TabIndex = 60;
             // 
             // btnSendDocument
             // 
-            this.btnSendDocument.Location = new System.Drawing.Point(564, 212);
+            this.btnSendDocument.Location = new System.Drawing.Point(655, 218);
             this.btnSendDocument.Name = "btnSendDocument";
             this.btnSendDocument.Size = new System.Drawing.Size(96, 20);
             this.btnSendDocument.TabIndex = 59;
             this.btnSendDocument.Text = "Send Document";
             this.btnSendDocument.UseVisualStyleBackColor = true;
+            this.btnSendDocument.Click += new System.EventHandler(this.btnSendDocument_Click);
             // 
             // btnSendImage
             // 
-            this.btnSendImage.Location = new System.Drawing.Point(564, 141);
+            this.btnSendImage.Location = new System.Drawing.Point(655, 147);
             this.btnSendImage.Name = "btnSendImage";
             this.btnSendImage.Size = new System.Drawing.Size(96, 20);
             this.btnSendImage.TabIndex = 58;
             this.btnSendImage.Text = "Send Image";
             this.btnSendImage.UseVisualStyleBackColor = true;
+            this.btnSendImage.Click += new System.EventHandler(this.btnSendImage_Click);
             // 
             // btnSEndText
             // 
-            this.btnSEndText.Location = new System.Drawing.Point(564, 51);
+            this.btnSEndText.Location = new System.Drawing.Point(655, 57);
             this.btnSEndText.Name = "btnSEndText";
             this.btnSEndText.Size = new System.Drawing.Size(86, 20);
             this.btnSEndText.TabIndex = 57;
             this.btnSEndText.Text = "Send Text";
             this.btnSEndText.UseVisualStyleBackColor = true;
+            this.btnSEndText.Click += new System.EventHandler(this.btnSendText_Click);
             // 
             // btnViewDoc
             // 
             this.btnViewDoc.Location = new System.Drawing.Point(192, 259);
             this.btnViewDoc.Name = "btnViewDoc";
-            this.btnViewDoc.Size = new System.Drawing.Size(75, 23);
+            this.btnViewDoc.Size = new System.Drawing.Size(144, 23);
             this.btnViewDoc.TabIndex = 72;
-            this.btnViewDoc.Text = "View";
+            this.btnViewDoc.Text = "View Image or Document";
             this.btnViewDoc.UseVisualStyleBackColor = true;
             this.btnViewDoc.Click += new System.EventHandler(this.btnViewDoc_Click);
             // 
@@ -379,7 +386,7 @@ namespace MessageServerClientDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 513);
+            this.ClientSize = new System.Drawing.Size(850, 513);
             this.Controls.Add(this.lblExpiry);
             this.Controls.Add(this.btnViewDoc);
             this.Controls.Add(this.label6);
