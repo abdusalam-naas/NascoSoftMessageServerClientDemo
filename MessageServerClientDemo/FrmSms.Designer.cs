@@ -44,7 +44,7 @@
             // lblExpiry
             // 
             this.lblExpiry.AutoSize = true;
-            this.lblExpiry.Location = new System.Drawing.Point(303, 119);
+            this.lblExpiry.Location = new System.Drawing.Point(53, 109);
             this.lblExpiry.Name = "lblExpiry";
             this.lblExpiry.Size = new System.Drawing.Size(95, 13);
             this.lblExpiry.TabIndex = 79;
@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 61);
+            this.label2.Location = new System.Drawing.Point(38, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 78;
@@ -62,7 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(288, 33);
+            this.label1.Location = new System.Drawing.Point(38, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 77;
@@ -71,7 +71,7 @@
             // txtPassword
             // 
             this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MessageServerClientDemo.Properties.Settings.Default, "SmsPassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtPassword.Location = new System.Drawing.Point(363, 57);
+            this.txtPassword.Location = new System.Drawing.Point(113, 47);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(101, 20);
@@ -81,7 +81,7 @@
             // txtUserName
             // 
             this.txtUserName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MessageServerClientDemo.Properties.Settings.Default, "SmsUserName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtUserName.Location = new System.Drawing.Point(363, 31);
+            this.txtUserName.Location = new System.Drawing.Point(113, 21);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(101, 20);
             this.txtUserName.TabIndex = 75;
@@ -89,7 +89,7 @@
             // 
             // btnAuthenticate
             // 
-            this.btnAuthenticate.Location = new System.Drawing.Point(363, 83);
+            this.btnAuthenticate.Location = new System.Drawing.Point(113, 73);
             this.btnAuthenticate.Name = "btnAuthenticate";
             this.btnAuthenticate.Size = new System.Drawing.Size(101, 23);
             this.btnAuthenticate.TabIndex = 74;
@@ -100,7 +100,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(314, 214);
+            this.label4.Location = new System.Drawing.Point(64, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 84;
@@ -108,7 +108,7 @@
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(373, 208);
+            this.txtMessage.Location = new System.Drawing.Point(123, 198);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(209, 76);
@@ -118,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(314, 174);
+            this.label3.Location = new System.Drawing.Point(64, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 82;
@@ -126,15 +126,14 @@
             // 
             // txtPhoneNo
             // 
-            this.txtPhoneNo.Location = new System.Drawing.Point(373, 171);
+            this.txtPhoneNo.Location = new System.Drawing.Point(123, 161);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(149, 20);
             this.txtPhoneNo.TabIndex = 81;
-            this.txtPhoneNo.Text = "0924002529";
             // 
             // btnSEndText
             // 
-            this.btnSEndText.Location = new System.Drawing.Point(588, 210);
+            this.btnSEndText.Location = new System.Drawing.Point(338, 200);
             this.btnSEndText.Name = "btnSEndText";
             this.btnSEndText.Size = new System.Drawing.Size(86, 20);
             this.btnSEndText.TabIndex = 80;
@@ -146,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(483, 354);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.label3);
