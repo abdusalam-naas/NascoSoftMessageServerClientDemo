@@ -158,7 +158,8 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnAuthenticate);
             this.Name = "FrmSms";
-            this.Text = "FrmSignalR";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Try Sms";
             this.ResumeLayout(false);
             this.PerformLayout();
 
