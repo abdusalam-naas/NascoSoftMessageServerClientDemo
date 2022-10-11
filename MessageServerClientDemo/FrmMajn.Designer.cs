@@ -385,7 +385,7 @@ namespace MessageServerClientDemo
             // 
             // btnSms
             // 
-            this.btnSms.Location = new System.Drawing.Point(35, 147);
+            this.btnSms.Location = new System.Drawing.Point(763, 13);
             this.btnSms.Name = "btnSms";
             this.btnSms.Size = new System.Drawing.Size(75, 23);
             this.btnSms.TabIndex = 74;
