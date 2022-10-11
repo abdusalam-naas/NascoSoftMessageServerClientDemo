@@ -1,38 +1,38 @@
 ﻿using MessageServer;
 using MessageServerClient;
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.IO;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MessageServerClientDemo
 {
     public partial class FrmMain : Form
     {
-        string jwt = "";
-        DateTime jwtexpirty;
-        DateTime subscriptionExpiry; 
+        string whatsappJwt = "";
+        DateTime whatsappJwtexpirty;
+        DateTime whatsappSubscriptionExpiry;
         public FrmMain()
         {
             InitializeComponent();
         }
 
+        WhatsAppClient CreateWhatsAppClient(string jwt)
+        {
+            return new WhatsAppClient(new Uri("http://192.168.1.50:5252/api/whatsapp/"), jwt);
+            //return new WhatsAppClient(new Uri("https://msg.nascosoft.ly/api/whatsapp/"), jwt);
+        }
+
         async private void btnAuthenticate_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
-            var client = new WhatsAppClient(null); //jwt is not required now
+            var client = CreateWhatsAppClient(null);
             var ar = await client.Authenticate(txtUserName.Text, txtPassword.Text);
 
             if (ar != null)
             {
-                jwt = ar.Jwt;
-                subscriptionExpiry = ar.SubscriptionExpiryDate;
-                jwtexpirty = ar.JwtExpiry;
+                whatsappJwt = ar.Jwt;
+                whatsappSubscriptionExpiry = ar.SubscriptionExpiryDate;
+                whatsappJwtexpirty = ar.JwtExpiry;
                 var expirtystr = $"Token valid Until {ar.JwtExpiry}\n\rSubscription valid until {ar.SubscriptionExpiryDate}";
                 lblExpiry.Text = expirtystr;
             }
@@ -54,7 +54,7 @@ namespace MessageServerClientDemo
                 MessageBox.Show("No Text");
                 return;
             }
-            WhatsAppClient client = new WhatsAppClient(jwt);
+            var client = CreateWhatsAppClient(whatsappJwt);
             if (await client.SendTextAsync(txtPhoneNo.Text, txtMessage.Text))
             {
                 MessageBox.Show("suceeeded");
@@ -85,10 +85,10 @@ namespace MessageServerClientDemo
             catch
             {
                 MessageBox.Show("error loading file");
-                return;    
+                return;
             }
 
-            WhatsAppClient client = new WhatsAppClient(jwt);
+            var client = CreateWhatsAppClient(whatsappJwt);
             if (await client.SendImage(txtPhoneNo.Text, ba, txtImageCaption.Text))
             {
                 MessageBox.Show("suceeded");
@@ -121,7 +121,8 @@ namespace MessageServerClientDemo
                 MessageBox.Show("error loading file");
                 return;
             }
-            WhatsAppClient client = new WhatsAppClient(jwt);
+
+            var client = CreateWhatsAppClient(whatsappJwt);
 
             if (await client.SendDocument(txtPhoneNo.Text, txtFileName.Text, ba))
             {
@@ -135,14 +136,14 @@ namespace MessageServerClientDemo
 
         async private void btnGetMessages_Click(object sender, EventArgs e)
         {
-            WhatsAppClient client = new WhatsAppClient(jwt);
+            var client = CreateWhatsAppClient(whatsappJwt);
             var ml = await client.GetMessagesAsync(1, 100);
             messagesBindingSource.DataSource = ml;
         }
 
         async private void btnCheckUser_Click(object sender, EventArgs e)
         {
-            WhatsAppClient client = new WhatsAppClient(jwt);
+            var client = CreateWhatsAppClient(whatsappJwt);
             if (await client.WhatsAppUserExists(txtCheckMobile.Text))
             {
                 MessageBox.Show(this, $"the number: {txtCheckMobile.Text} is Valid");
@@ -169,7 +170,7 @@ namespace MessageServerClientDemo
             }
         }
 
-        
+
 
         private void btnImageFileDialog_Click(object sender, EventArgs e)
         {
@@ -204,5 +205,14 @@ namespace MessageServerClientDemo
         {
             ViewDocument();
         }
+
+        private void btnSms_Click(object sender, EventArgs e)
+        {
+            var f = new FrmSms();
+            f.ShowDialog();
+        }
+
+        //========================
+
     }
 }

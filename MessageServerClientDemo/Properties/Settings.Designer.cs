@@ -26,24 +26,48 @@ namespace MessageServerClientDemo.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string UserName {
+        public string WhatsAppUserName {
             get {
-                return ((string)(this["UserName"]));
+                return ((string)(this["WhatsAppUserName"]));
             }
             set {
-                this["UserName"] = value;
+                this["WhatsAppUserName"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Password {
+        public string WhatsAppPassword {
             get {
-                return ((string)(this["Password"]));
+                return ((string)(this["WhatsAppPassword"]));
             }
             set {
-                this["Password"] = value;
+                this["WhatsAppPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SmsUserName {
+            get {
+                return ((string)(this["SmsUserName"]));
+            }
+            set {
+                this["SmsUserName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SmsPassword {
+            get {
+                return ((string)(this["SmsPassword"]));
+            }
+            set {
+                this["SmsPassword"] = value;
             }
         }
     }

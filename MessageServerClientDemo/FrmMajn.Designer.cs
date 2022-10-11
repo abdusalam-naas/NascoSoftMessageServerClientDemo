@@ -65,6 +65,7 @@ namespace MessageServerClientDemo
             this.btnSEndText = new System.Windows.Forms.Button();
             this.btnViewDoc = new System.Windows.Forms.Button();
             this.lblExpiry = new System.Windows.Forms.Label();
+            this.btnSms = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.messagesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -185,22 +186,22 @@ namespace MessageServerClientDemo
             // 
             // txtUserName
             // 
-            this.txtUserName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MessageServerClientDemo.Properties.Settings.Default, "UserName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtUserName.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MessageServerClientDemo.Properties.Settings.Default, "WhatsAppUserName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtUserName.Location = new System.Drawing.Point(92, 13);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(101, 20);
             this.txtUserName.TabIndex = 23;
-            this.txtUserName.Text = global::MessageServerClientDemo.Properties.Settings.Default.UserName;
+            this.txtUserName.Text = global::MessageServerClientDemo.Properties.Settings.Default.WhatsAppUserName;
             // 
             // txtPassword
             // 
-            this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MessageServerClientDemo.Properties.Settings.Default, "Password", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::MessageServerClientDemo.Properties.Settings.Default, "WhatsAppPassword", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtPassword.Location = new System.Drawing.Point(92, 39);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(101, 20);
             this.txtPassword.TabIndex = 24;
-            this.txtPassword.Text = global::MessageServerClientDemo.Properties.Settings.Default.Password;
+            this.txtPassword.Text = global::MessageServerClientDemo.Properties.Settings.Default.WhatsAppPassword;
             // 
             // txtCheckMobile
             // 
@@ -382,11 +383,22 @@ namespace MessageServerClientDemo
             this.lblExpiry.TabIndex = 73;
             this.lblExpiry.Text = "Not Authenticated";
             // 
+            // btnSms
+            // 
+            this.btnSms.Location = new System.Drawing.Point(35, 147);
+            this.btnSms.Name = "btnSms";
+            this.btnSms.Size = new System.Drawing.Size(75, 23);
+            this.btnSms.TabIndex = 74;
+            this.btnSms.Text = "Try Sms";
+            this.btnSms.UseVisualStyleBackColor = true;
+            this.btnSms.Click += new System.EventHandler(this.btnSms_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 513);
+            this.Controls.Add(this.btnSms);
             this.Controls.Add(this.lblExpiry);
             this.Controls.Add(this.btnViewDoc);
             this.Controls.Add(this.label6);
@@ -468,6 +480,7 @@ namespace MessageServerClientDemo
         private System.Windows.Forms.Button btnSEndText;
         private System.Windows.Forms.Button btnViewDoc;
         private System.Windows.Forms.Label lblExpiry;
+        private System.Windows.Forms.Button btnSms;
     }
 }
 
