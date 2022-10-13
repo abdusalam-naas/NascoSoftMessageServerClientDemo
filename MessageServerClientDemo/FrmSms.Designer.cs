@@ -139,7 +139,7 @@
             this.btnSEndText.TabIndex = 80;
             this.btnSEndText.Text = "Send Text";
             this.btnSEndText.UseVisualStyleBackColor = true;
-            this.btnSEndText.Click += new System.EventHandler(this.btnSEndText_Click);
+            this.btnSEndText.Click += new System.EventHandler(this.btnSendText_Click);
             // 
             // FrmSms
             // 

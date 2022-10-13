@@ -36,10 +36,18 @@ namespace MessageServerClientDemo
             }
         }
 
-        async private void btnSEndText_Click(object sender, EventArgs e)
+        async private void btnSendText_Click(object sender, EventArgs e)
         {
             var client = new SmsClient(smsJwt);
-            await client.SendTextAsync(txtPhoneNo.Text, txtMessage.Text);
+            if (await client.SendTextAsync(txtPhoneNo.Text, txtMessage.Text))
+            {
+                MessageBox.Show("suceeded");
+            }
+            else
+            {
+                MessageBox.Show("failed");
+            }
+            
         }
     }
 }
