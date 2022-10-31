@@ -16,16 +16,10 @@ namespace MessageServerClientDemo
             InitializeComponent();
         }
 
-        WhatsAppClient CreateWhatsAppClient(string jwt)
-        {
-            return new WhatsAppClient(new Uri("http://192.168.1.50:5252/api/whatsapp/"), jwt);
-            //return new WhatsAppClient(new Uri("https://msg.nascosoft.ly/api/whatsapp/"), jwt);
-        }
-
         async private void btnAuthenticate_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
-            var client = CreateWhatsAppClient(null);
+            var client = new WhatsAppClient();
             var ar = await client.Authenticate(txtUserName.Text, txtPassword.Text);
 
             if (ar != null)
@@ -54,7 +48,7 @@ namespace MessageServerClientDemo
                 MessageBox.Show("No Text");
                 return;
             }
-            var client = CreateWhatsAppClient(whatsappJwt);
+            var client = new WhatsAppClient(whatsappJwt);
             if (await client.SendTextAsync(txtPhoneNo.Text, txtMessage.Text))
             {
                 MessageBox.Show("suceeeded");
@@ -88,7 +82,7 @@ namespace MessageServerClientDemo
                 return;
             }
 
-            var client = CreateWhatsAppClient(whatsappJwt);
+            var client = new WhatsAppClient(whatsappJwt);
             if (await client.SendImage(txtPhoneNo.Text, ba, txtImageCaption.Text))
             {
                 MessageBox.Show("suceeded");
@@ -122,7 +116,7 @@ namespace MessageServerClientDemo
                 return;
             }
 
-            var client = CreateWhatsAppClient(whatsappJwt);
+            var client = new WhatsAppClient(whatsappJwt);
 
             if (await client.SendDocument(txtPhoneNo.Text, txtFileName.Text, ba))
             {
@@ -136,14 +130,14 @@ namespace MessageServerClientDemo
 
         async private void btnGetMessages_Click(object sender, EventArgs e)
         {
-            var client = CreateWhatsAppClient(whatsappJwt);
+            var client = new WhatsAppClient(whatsappJwt);
             var ml = await client.GetMessagesAsync(1, 100);
             messagesBindingSource.DataSource = ml;
         }
 
         async private void btnCheckUser_Click(object sender, EventArgs e)
         {
-            var client = CreateWhatsAppClient(whatsappJwt);
+            var client = new WhatsAppClient(whatsappJwt);
             if (await client.WhatsAppUserExists(txtCheckMobile.Text))
             {
                 MessageBox.Show(this, $"the number: {txtCheckMobile.Text} is Valid");

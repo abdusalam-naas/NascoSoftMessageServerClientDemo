@@ -9,7 +9,6 @@ namespace MessageServerClientDemo
         string smsJwt = "";
         DateTime smsJwtexpirty;
         DateTime smsSubscriptionExpiry;
-        const string smsApiServer = "https://msg.nascosoft.ly";
 
         public FrmSms()
         {
